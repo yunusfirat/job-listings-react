@@ -1,11 +1,15 @@
 import React from "react";
+import SingleJob from "./SingleJob";
 import { useGlobalContext } from "./Context";
 const Joblist = () => {
     const { jobData } = useGlobalContext();
-    console.log(jobData);
     return (
-        <div>
-
+        <div className="joblist">
+            {jobData.map((job) => {
+                return (
+                    <SingleJob job={job}/>
+                );
+            })}
         </div>
     );
 };

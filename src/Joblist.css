@@ -1,0 +1,105 @@
+:root{
+    --spacer: 1rem;
+    --clr-primary-100: hsla(180, 29%, 50%, 1);
+    --clr-neutral-100: hsla(0, 0%, 100%, 1);
+    --clr-neutral-200: hsla(180, 31%, 95%, 1);
+    --clr-neutral-300: hsla(180, 52%, 96%, 1);
+    --clr-neutral-400: hsla(180, 8%, 52%, 1);
+    --clr-neutral-500: hsla(180, 14%, 20%, 1);
+    --clr-neutral-600: hsla(0, 0%, 0%, 1);
+    --step--1: clamp(0.73rem, 0.7rem + 0.11vw, 0.8rem);
+    --step-0: clamp(0.88rem, 0.83rem + 0.19vw, 1rem);
+    --step-1: clamp(1.05rem, 0.98rem + 0.3vw, 1.25rem);
+    --ff-body: "Spartan", sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-neutral-300);
+    font-family: var(--ff-body);
+    font-size: var(--step-0);
+}
+
+.promoted {
+    background-color: var(--clr-neutral-600);
+}
+.split {
+    display: flex;
+    gap: var(--spacer);
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.left-side {
+    display: flex;
+}
+
+.job-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 35px;
+    width: 900px;
+    height: 150px;
+
+    align-items: center;
+    gap: var(--spacer);
+    padding-top: clamp(0.5rem, 2.5%, 2rem);
+    padding-bottom: clamp(0.5rem, 2.5%, 2rem);
+    border-left: 5px solid transparent;
+    box-shadow: 0 1em 1em rgb(44 58 58 / 20%);
+    background-color: var(--clr-neutral-100);
+    transition: border-color 200ms;
+}
+
+.joblist {
+    margin-left: 10rem;
+}
+
+h2 {
+    font-size: var(--step--1);
+    color: var(--clr-primary-100);
+}
+
+p {
+    display: inline-block;
+    padding: 0.6em 0.75em 0.3em;
+    border-radius: 1em;
+    font-size: var(--step--1);
+    font-weight: 700;
+    line-height: 0.73rem;
+    text-transform: uppercase;
+    color: var(--clr-neutral-100);
+}
+
+.age {
+    color: var(--clr-neutral-400);
+}
+
+.time {
+    color: var(--clr-neutral-400);
+}
+.location {
+    color: var(--clr-neutral-400);
+}
+.highlight {
+    background-color: var(--clr-primary-100);
+}
+.position {
+    transition: color 200ms;
+    font-size: var(--step-1);
+    text-decoration: none;
+    color: var(--clr-neutral-500);
+}
+
+.left-left {
+    margin-left: 40px;
+}
+
+.right-side{
+    border: 2px solid red;
+    margin-right: 5rem;
+    padding:1rem 5rem;
+}
