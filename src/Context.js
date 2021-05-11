@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Data from "./data.json";
 
-const Context = () => {
+const AppContext = React.createContext();
+
+const AppProvider = ({ children }) => {
+    const [jobData, setJobData ] = useState(Data);
     console.log(Data);
     return (
-        <div>
-
-        </div>
+        <AppContext.Provider value={{
+            jobData,
+            setJobData,
+        }}>
+            {children}
+        </AppContext.Provider>
     );
 };
 
+export const useGlobalContext = () =>{
+    return useContext(AppContext);
+};
 
-export default Context;
+export { AppContext, AppProvider };
