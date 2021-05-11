@@ -6,7 +6,7 @@ const Navbar = () => {
         objectFit: "cover",
         boxSizing: "border-box",
         backgroundColor: "hsla(180, 29%, 50%, 1)",
-        height: "150px",
+        height: "130px",
         width: "1440px",
     };
     return (

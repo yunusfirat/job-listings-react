@@ -1,17 +1,21 @@
 import React from "react";
+import as from "./images/account.svg";
 import "./Joblist.css";
+
+
 const SingleJob = ({ job }) => {
-    const {  company, id, featured, position,postedAt, contract, location  } = job;
+    const {  company, id, featured, position,postedAt, contract, location, level, role, languages, logo  } = job;
+    console.log(logo);
     return (
         <div className="job-container">
             <div className="left-side" key={id}>
                 <div>
-                <img src={job.Logo} alt={company}style={{ maxwidth:"100%" }}></img>
+                <img src={as} className="img-logo"  alt={company}></img>
                 </div>
-                <div className="left-left">
-                <div className="split">
+                <div className="left-right">
+                <div className="split split-up">
                     <h2>{company}</h2>
-                    <p className="highlight">{job.new ? "NEW!" : null}</p>
+                    <p className="highlight">{job.new ? "NEW!" : "NEW!"}</p>
                     <p className="promoted">{featured ? "FEATURED" : "FEATURED"}</p>
                 </div>
                 <div><h3 className="position">{position}</h3></div>
@@ -23,7 +27,19 @@ const SingleJob = ({ job }) => {
                 </div>
             </div>
             <div className="right-side">
-        <h1>sadsad</h1>
+                <div className="form-split">
+                    <div className="up-right">
+                    <button>{level}</button>
+                    <button>{role}</button>
+                    </div>
+                    <div className="up-bottom">
+                        {languages.map((language) => {
+                            return(
+                                <button>{language}</button>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
 
         </div>
