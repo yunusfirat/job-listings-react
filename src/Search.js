@@ -3,14 +3,20 @@ import { useGlobalContext } from "./Context";
 import { VscClose } from "react-icons/vsc";
 
 const Search = () => {
-    const { searchArray, setSearchArray } = useGlobalContext();
+    const { searchArray, setSearchArray, Data, setJobData } = useGlobalContext();
 
 
     const remove = (e) => {
+        let name = e.target.value;
         setSearchArray(searchArray.filter((element) => element !== e.target.value));
+        const newArray = Data.filter((element) => name !=="" ? !element.role.includes(name)
+        || !element.level.includes(name)
+        || !element.languages.includes(name) === true : element);
+        setJobData(newArray);
     };
     const clear = () => {
         setSearchArray(searchArray.filter((element) => element.length === 0));
+        setJobData(Data);
     };
     return (
         <div className="search">

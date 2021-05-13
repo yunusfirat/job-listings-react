@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
             setJobData,
             searchArray,
             setSearchArray,
+            Data,
 
         }}>
             {children}

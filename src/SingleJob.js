@@ -13,7 +13,6 @@ const SingleJob = ({ job }) => {
         || element.level.includes(name)
         || element.languages.includes(name) === true : element);
         setJobData(newArray);
-        console.log(newArray);
     };
 
     return (
