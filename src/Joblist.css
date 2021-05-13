@@ -148,3 +148,18 @@ button:hover {
     margin-left: 2rem;
     margin-top: 2.4rem;
 }
+
+.search {
+    display: flex;
+    gap: 3px;
+    text-align: center;
+    border: 2px solid black;
+    justify-content: space-between;
+    height: 5rem;
+    width: 72rem;
+    align-items: center;
+    position: absolute;
+    top:59px;
+    left:7rem;
+    background-color: #fff;
+  }

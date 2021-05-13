@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {searchArray&& <Search /> }
+      {searchArray.length > 0 ? <Search /> : null}
       <Joblist />
     </div>
   );

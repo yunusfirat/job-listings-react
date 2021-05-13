@@ -8,7 +8,6 @@ const SingleJob = ({ job }) => {
     const { setSearchArray, searchArray } = useGlobalContext();
     console.log(searchArray);
     const add = (e) => {
-        console.log(setSearchArray);
         const name = e.target.value;
         setSearchArray(searchArray.concat(name));
     };
