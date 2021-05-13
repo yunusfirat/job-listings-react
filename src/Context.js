@@ -6,7 +6,6 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
     const [jobData, setJobData ] = useState(Data);
     const [searchArray, setSearchArray] = useState([]);
-    console.log(searchArray);
     return (
         <AppContext.Provider value={{
             jobData,

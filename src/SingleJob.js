@@ -5,13 +5,16 @@ import { useGlobalContext } from "./Context";
 
 const SingleJob = ({ job }) => {
     const {  company, id, featured, position,postedAt, contract, location, level, role, languages  } = job;
-    const { setSearchArray, searchArray } = useGlobalContext();
-    console.log(searchArray);
+    const { setSearchArray, searchArray, setJobData, jobData  } = useGlobalContext();
     const add = (e) => {
         const name = e.target.value;
         setSearchArray(searchArray.concat(name));
+        const newArray = jobData.filter((element) => name !=="" ? element.role.includes(name)
+        || element.level.includes(name)
+        || element.languages.includes(name) === true : element);
+        setJobData(newArray);
+        console.log(newArray);
     };
-
 
     return (
         <div className="job-container">

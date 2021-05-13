@@ -5,6 +5,7 @@ import { VscClose } from "react-icons/vsc";
 const Search = () => {
     const { searchArray, setSearchArray } = useGlobalContext();
 
+
     const remove = (e) => {
         setSearchArray(searchArray.filter((element) => element !== e.target.value));
     };
