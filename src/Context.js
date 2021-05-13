@@ -5,11 +5,15 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     const [jobData, setJobData ] = useState(Data);
-    console.log(Data);
+    const [searchArray, setSearchArray] = useState([]);
+    console.log(searchArray);
     return (
         <AppContext.Provider value={{
             jobData,
             setJobData,
+            searchArray,
+            setSearchArray,
+
         }}>
             {children}
         </AppContext.Provider>

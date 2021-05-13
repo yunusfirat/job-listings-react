@@ -1,11 +1,19 @@
 import React from "react";
 import as from "./images/account.svg";
 import "./Joblist.css";
-
+import { useGlobalContext } from "./Context";
 
 const SingleJob = ({ job }) => {
-    const {  company, id, featured, position,postedAt, contract, location, level, role, languages, logo  } = job;
-    console.log(logo);
+    const {  company, id, featured, position,postedAt, contract, location, level, role, languages  } = job;
+    const { setSearchArray, searchArray } = useGlobalContext();
+    console.log(searchArray);
+    const add = (e) => {
+        console.log(setSearchArray);
+        const name = e.target.value;
+        setSearchArray(searchArray.concat(name));
+    };
+
+
     return (
         <div className="job-container">
             <div className="left-side" key={id}>
@@ -29,13 +37,23 @@ const SingleJob = ({ job }) => {
             <div className="right-side">
                 <div className="form-split">
                     <div className="up-right">
-                    <button>{level}</button>
-                    <button>{role}</button>
+                    <button
+                    onClick={add}
+                    value={level}
+                    >{level}
+                    </button>
+                    <button
+                    onClick={add}
+                    value={role}>{role}
+                    </button>
                     </div>
                     <div className="up-bottom">
                         {languages.map((language) => {
                             return(
-                                <button>{language}</button>
+                                <button
+                                onClick={add}
+                                value={language}>{language}
+                                </button>
                             );
                         })}
                     </div>
