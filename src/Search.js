@@ -9,9 +9,9 @@ const Search = () => {
     const remove = (e) => {
         let name = e.target.value;
         setSearchArray(searchArray.filter((element) => element !== e.target.value));
-        const newArray = Data.filter((element) => name !=="" ? !element.role.includes(name)
-        || !element.level.includes(name)
-        || !element.languages.includes(name) === true : element);
+        const newArray = Data.filter((element) => name !=="" ? element.role.includes(searchArray.map((element) => element)) === false
+        || element.level.includes(searchArray.map((element) => element)) === false
+        || element.languages.includes(searchArray.map((element) => element)) === false : element);
         setJobData(newArray);
     };
     const clear = () => {

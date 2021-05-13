@@ -8,11 +8,15 @@ const SingleJob = ({ job }) => {
     const { setSearchArray, searchArray, setJobData, jobData  } = useGlobalContext();
     const add = (e) => {
         const name = e.target.value;
-        setSearchArray(searchArray.concat(name));
-        const newArray = jobData.filter((element) => name !=="" ? element.role.includes(name)
-        || element.level.includes(name)
-        || element.languages.includes(name) === true : element);
-        setJobData(newArray);
+        if(searchArray.includes(name) === true) {
+            alert("you have already added this item");
+        }else{
+            setSearchArray(searchArray.concat(name));
+            const newArray = jobData.filter((element) => name !=="" ? element.role.includes(name)
+            || element.level.includes(name)
+            || element.languages.includes(name) === true : element);
+            setJobData(newArray);
+        }
     };
 
     return (
