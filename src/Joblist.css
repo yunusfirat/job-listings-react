@@ -163,3 +163,7 @@ button:hover {
     left:7rem;
     background-color: #fff;
   }
+
+  .clear {
+      margin-right: 10px;
+  }

@@ -9,10 +9,7 @@ const Search = () => {
         setSearchArray(searchArray.filter((element) => element !== e.target.value));
     };
     const clear = () => {
-        while(searchArray.length>0){
-            searchArray.pop();
-        }
-    setSearchArray(searchArray);
+        setSearchArray(searchArray.filter((element) => element.length === 0));
     };
     return (
         <div className="search">
@@ -26,7 +23,8 @@ const Search = () => {
             })}
             </div>
             <div>
-            <button onClick={clear}>Clear</button>
+            <button onClick={clear}
+            className="clear">Clear <VscClose /></button>
 
             </div>
         </div>
